@@ -32,4 +32,4 @@ const server = net.createServer(function(client) {
 
 });
 
-server.listen(port, 'localhost');
+server.listen(port, '0.0.0.0');

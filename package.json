@@ -1,0 +1,13 @@
+{
+  "name": "tcpc5",
+  "version": "0.0.1",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "forever": "^0.15.3",
+    "request": "^2.87.0"
+  },
+  "scripts": {
+    "start": "forever start server.js"
+  }
+}

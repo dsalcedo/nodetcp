@@ -1,9 +1,13 @@
 var net = require('net'),
+ client = new net.Socket();
 
-var client = new net.Socket();
-client.connect(8080, '127.0.0.1', function() {
+client.connect(8080, '142.93.28.212', function() {
 	console.log('Connected');
-	client.write('{content:false, data:[]}');
+	client.write('{content:false, data:["test":true]}');
+});
+
+client.on('error', function(error) {
+	console.log('Received: ' + error);
 });
 
 client.on('data', function(data) {

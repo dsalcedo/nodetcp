@@ -15,20 +15,19 @@ const server = net.createServer(function(client) {
 
     client.on('data', function (data) {
         let temp = data.toString();
+        console.log(temp);
             request.post(host, {form:{ip:clientIp, content: temp}});
-            client.write("{success:true, done:false}");
+            client.write(200);
+            client.end();
     });
 
     client.on('timeout', function () {
-        //console.log('Client request time out. ');
+        client.write(504);
     });
 
     client.on('error', function (err) {
-        client.write("{success:false, done:false}");
-        //console.log('Connection %s error: %s', clientIp, err.message);
+        client.write(409);
     });
-
-    client.end("{success:true, done:true}");
 
 });
 

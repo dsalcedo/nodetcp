@@ -15,18 +15,17 @@ const server = net.createServer(function(client) {
 
     client.on('data', function (data) {
         let temp = data.toString();
-        console.log(temp);
             request.post(host, {form:{ip:clientIp, content: temp}});
-            client.write(200);
+            client.write("200");
             client.end();
     });
 
     client.on('timeout', function () {
-        client.write(504);
+        client.write("504");
     });
 
     client.on('error', function (err) {
-        client.write(409);
+        client.write("409");
     });
 
 });

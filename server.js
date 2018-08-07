@@ -7,15 +7,13 @@ const port = dotenv.parsed.PORT;
 console.log("Server started");
 
 const server = net.createServer(function(client) {
-	
-  let clientIp = client.remoteAddress;
 
     client.setEncoding('utf-8');
     client.setTimeout(6000);
 
     client.on('data', function (data) {
         let temp = data.toString();
-            request.post(host, {form:{ip:clientIp, content: temp}});
+            request.post(host, {form:{ip:'1.1.1.1', content: temp}});
             client.write("200");
             client.end();
     });

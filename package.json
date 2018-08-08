@@ -5,7 +5,8 @@
   "dependencies": {
     "dotenv": "^6.0.0",
     "forever": "^0.15.3",
-    "request": "^2.87.0"
+    "request": "^2.87.0",
+    "tracking-parser": "^1.6.0"
   },
   "scripts": {
     "start": "forever start server.js"

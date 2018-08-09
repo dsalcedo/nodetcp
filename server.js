@@ -16,7 +16,7 @@ const server = net.createServer(function(client) {
         let raw = new Buffer.from(data);
         let parsed = queclink.parse(raw);
 
-        if(typeof parsed.raw !== 'object'){
+        if(typeof parsed !== 'object'){
             client.end();
         }
 

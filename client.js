@@ -1,7 +1,7 @@
 var net = require('net'),
  client = new net.Socket();
 
-client.connect(8080, '127.0.0.1', function() {
+client.connect(9090, 'sigue.in', function() {
 	console.log('Connected');
 	client.write('{content:false, data:["loadbalancer":true]}');
 });

@@ -12,15 +12,9 @@ const server = net.createServer(function(client) {
     client.setEncoding('utf-8');
 
     client.on('data', function (data) {
-
         let raw = new Buffer.from(data);
-        let parsed = queclink.parse(raw);
-
-        if(typeof parsed !== 'object'){
-            client.end();
-        }
-
-        request.post(host, { form: { ip: '1.1.1.1', content: parsed } });
+        // let parsed = queclink.parse(raw);
+        request.post(host, { form: { ip: '1.1.1.1', content: raw } });
         client.write("200");
     });
 
